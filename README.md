@@ -1,3 +1,5 @@
+<img src = /termTrackerIcon.jpg>
+
 # TermTracker
 
 TermTracker is an Android app for students to track information pertaining to their terms, courses, and tests.
@@ -20,4 +22,5 @@ TermTracker includes the following functionalities:
 
 ## User Flow Diagram
 
+Click image to view enlarged version
 <img src = /userFlowDiagram.jpg/>
