@@ -20,3 +20,4 @@ TermTracker includes the following functionalities:
 
 ## User Flow Diagram
 
+<img src = /userFlowDiagram.jpg/>
