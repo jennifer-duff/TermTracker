@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name = "listItemFieldDates">
+        <item name = "android:fontFamily">@font/azeretmono_light</item>
+        <item name = "android:textColor">@color/blue</item>
+        <item name = "android:textSize">13.5sp</item>
+        <item name = "android:letterSpacing">-0.05</item>
+    </style>
+</resources>

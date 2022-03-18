@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name = "dateSubheading"
+        parent = "@style/TextAppearance.AppCompat.Display2">
+        <item name = "android:fontFamily">@font/azeretmono_light</item>
+        <item name = "android:textColor">@color/blue</item>
+        <item name = "android:textSize">14.5sp</item>
+        <item name = "android:letterSpacing">0.08</item>
+    </style>
+</resources>

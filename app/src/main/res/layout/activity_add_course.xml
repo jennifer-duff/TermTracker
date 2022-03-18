@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.AddCourse"
+    android:background="@color/eggshell"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="start"
+        android:layout_gravity = "top">
+
+        <LinearLayout
+            android:id="@+id/contentBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="40dp">
+
+
+            <TextView
+                android:id="@+id/screenTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/heading"
+                android:text="@string/add_course_header"
+                android:textAlignment="center"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/courseDetailsBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/courseDetailsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/course_details_subHeading"
+                    android:textAppearance="@style/subheading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/screenTitle"
+                    android:layout_marginBottom="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/courseTermBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/courseNameBox">
+
+                    <TextView
+                        android:id="@+id/courseTermLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="7dp"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/course_term_label"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/courseTermSpinner"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:labelFor="@id/courseTermSpinner"/>
+
+                    <Spinner
+                        android:id="@+id/courseTermSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/courseNameBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/courseDetailsHeading">
+
+                    <TextView
+                        android:id="@+id/courseNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:labelFor="@id/courseNameField"
+                        android:text="@string/course_name_label"
+                        android:textAppearance="@style/listItemHeading"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/courseNameField"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/courseNameField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="e.g., 'Mobile App Development'"
+                        android:textAppearance="@style/listItemField"
+                        android:textColor="@color/softblack"
+                        android:inputType="text"
+                        android:hint="e.g., 'Transfiguration'"
+                        app:layout_constraintLeft_toRightOf="@id/courseNameLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/courseDatesBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/courseTermBox"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/startDateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/start_date_label"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/startDateField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:labelFor="@id/startDateField"/>
+
+                    <EditText
+                        android:id="@+id/startDateField"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="01/11/22"
+                        android:textSize="13.5sp"
+                        android:fontFamily="@font/azeretmono_light"
+                        android:textColor="@color/softblack"
+                        android:inputType="date"
+                        android:hint="mm/dd/yy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/startDateLabel"
+                        app:layout_constraintRight_toLeftOf="@id/fillGap1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="5dp"/>
+
+                    <Space
+                        android:id="@+id/fillGap1"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/startDateField"
+                        app:layout_constraintRight_toLeftOf="@id/endDateLabel"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/endDateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/end_date_label"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/fillGap1"
+                        app:layout_constraintRight_toLeftOf="@id/endDateField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:labelFor="@id/endDateField"/>
+
+                    <EditText
+                        android:id="@+id/endDateField"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="6/30/22"
+                        android:textSize="13.5sp"
+                        android:fontFamily="@font/azeretmono_light"
+                        android:textColor="@color/softblack"
+                        android:inputType="date"
+                        android:hint="mm/dd/yy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/endDateLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/statusBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/courseDatesBox">
+
+                    <TextView
+                        android:id="@+id/statusLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/status_label"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/statusField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:labelFor="@id/statusField"/>
+
+                    <EditText
+                        android:id="@+id/statusField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="e.g., 'In Progress'"
+                        android:textAppearance="@style/listItemField"
+                        android:textColor="@color/softblack"
+                        android:inputType="text"
+                        android:hint="'In Progress', 'Completed', 'Planned', etc."
+                        app:layout_constraintLeft_toRightOf="@id/statusLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/instructorInfoBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/courseDetailsBox">
+
+            <TextView
+                android:id="@+id/instructorInfoHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instructor_info_subHeader"
+                android:textAppearance="@style/subheading"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/instructorNameBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instructorInfoHeader">
+
+                <TextView
+                    android:id="@+id/instructorNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:textAppearance="@style/listItemHeading"
+                    android:text="@string/instructor_name_label"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/instructorNameField"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:labelFor="@id/instructorNameField"/>
+
+                <EditText
+                    android:id="@+id/instructorNameField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="e.g., 'Jennifer Bowser'"
+                    android:textAppearance="@style/listItemField"
+                    android:textColor="@color/softblack"
+                    android:inputType="text"
+                    android:hint="FirstName LastName"
+                    app:layout_constraintLeft_toRightOf="@id/instructorNameLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instructorEmailBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instructorNameBox">
+
+                <TextView
+                    android:id="@+id/instuctorEmailLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:textAppearance="@style/listItemHeading"
+                    android:text="@string/email_label"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/instructorEmailField"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:labelFor="@id/instructorEmailField"/>
+
+                <EditText
+                    android:id="@+id/instructorEmailField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="e.g., 'Jennifer Bowser'"
+                    android:textAppearance="@style/listItemField"
+                    android:textColor="@color/softblack"
+                    android:inputType="textEmailAddress"
+                    android:hint="firstInitial.lastName@hogwarts.edu"
+                    app:layout_constraintLeft_toRightOf="@id/instuctorEmailLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instructorPhoneBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instructorEmailBox">
+
+                <TextView
+                    android:id="@+id/instuctorPhoneLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:textAppearance="@style/listItemHeading"
+                    android:text="@string/phone_label"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/instructorPhoneField"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:labelFor="@id/instructorPhoneField"/>
+
+                <EditText
+                    android:id="@+id/instructorPhoneField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="e.g., 'Jennifer Bowser'"
+                    android:fontFamily="@font/azeretmono_light"
+                    android:textSize="13.5sp"
+                    android:textColor="@color/softblack"
+                    android:inputType="phone"
+                    android:hint="555-555-5555"
+                    app:layout_constraintLeft_toRightOf="@id/instuctorPhoneLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/navBtnsBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assessmentsBox"
+                android:layout_marginTop="20dp">
+
+                <Space
+                    android:id="@+id/fillGap2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/saveBtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:onClick="saveCourse"
+                    style="@style/saveBtn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/fillGap2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name = "heading"
+        parent = "@style/TextAppearance.AppCompat.Display2">
+        <item name = "android:fontFamily">@font/manrope_semibold</item>
+        <item name = "android:textColor">@color/gray</item>
+        <item name = "android:textSize">42.47sp</item>
+        <item name="lineHeight">47sp</item>
+    </style>
+</resources>

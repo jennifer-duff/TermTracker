@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eggshell"
+    tools:context=".UI.ViewCourseDetails"
+    android:gravity="top">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="start"
+        android:layout_gravity = "top">
+
+        <LinearLayout
+            android:id="@+id/headingBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/courseStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Progress"
+                    android:background="@color/blue"
+                    android:textColor="@color/eggshell"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.03"
+                    android:fontFamily="@font/manrope_semibold"
+                    android:paddingStart="7dp"
+                    android:paddingEnd="7dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/termName"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <Space
+                    android:id="@+id/spacer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/courseStatus"
+                    app:layout_constraintEnd_toStartOf="@id/termName"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/termName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:text="Summer Term"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gray"
+                    android:textSize="14.5sp"
+                    android:letterSpacing="0.04"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintStart_toEndOf="@id/courseStatus"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/courseName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/heading"
+                android:text="Transfiguration"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/headingBox"/>
+
+            <LinearLayout
+                android:id="@+id/courseDetailBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseName"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="01/11/22"
+                    android:textAppearance="@style/dateSubheading"
+                    app:layout_constraintStart_toStartOf="@id/termName"
+                    app:layout_constraintEnd_toStartOf="@id/hyphen"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hyphen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/hyphen"
+                    android:textAppearance="@style/dateSubheading"
+                    app:layout_constraintStart_toEndOf="@id/startDate"
+                    app:layout_constraintEnd_toStartOf="@id/endDate"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="6.5dp"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/endDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="06/30/22"
+                    android:textAppearance="@style/dateSubheading"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintStart_toEndOf="@id/hyphen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/instructorInfoBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/instructorDetailsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instructor_info_subHeader"
+                    android:textAppearance="@style/subheading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    android:layout_marginBottom="7dp"/>
+
+                <LinearLayout
+                    android:id="@+id/instructorNameBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="13dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/instructorDetailsHeading"
+                    android:background="@color/tan"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/instructorNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/instructor_name_label"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/instructorNameField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="6.5dp"
+                        android:labelFor="@id/instructorNameField"/>
+
+                    <TextView
+                        android:id="@+id/instructorNameField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemField"
+                        android:text="Minerva McGonagall"
+                        app:layout_constraintLeft_toRightOf="@id/instructorNameLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/instructorEmailBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/instructorNameBox"
+                    android:background="@color/tan"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/instructorEmailLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/email_label"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/instructorEmailField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="6.5dp"
+                        android:labelFor="@id/instructorEmailField"/>
+
+                    <TextView
+                        android:id="@+id/instructorEmailField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemField"
+                        android:text="m.mcgonagall@hogwarts.edu"
+                        app:layout_constraintLeft_toRightOf="@id/instructorEmailLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/instructorPhoneBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/instructorEmailBox"
+                    android:background="@color/tan"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/instructorPhoneLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemHeading"
+                        android:text="@string/phone_label"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/instructorPhoneField"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="6.5dp"
+                        android:labelFor="@id/instructorPhoneField"/>
+
+                    <TextView
+                        android:id="@+id/instructorPhoneField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/listItemFieldDates"
+                        android:text="425-555-5076"
+                        app:layout_constraintLeft_toRightOf="@id/instructorPhoneLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assessmentsBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="45dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instructorInfoBox">
+
+                <TextView
+                    android:id="@+id/assessmentsSubheader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/assessments_subHeader"
+                    android:textAppearance="@style/subheading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    android:layout_marginBottom="7dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/courseAssessmentsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dateBox"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="-10dp">
+
+                    <ImageButton
+                        android:id="@+id/addAssessmentBtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/add_icon_foreground"
+                        android:background="#0000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/addNewAssessmentLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:onClick="addNewAssessment"
+                        android:contentDescription="@string/addNew_btn_desc"
+                        android:layout_marginStart="-9dp"
+                        android:layout_marginEnd="3dp"/>
+
+                    <TextView
+                        android:id="@+id/addNewAssessmentLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_new_assessment"
+                        android:textAppearance="@style/addNew"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/addAssessmentBtn"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/notesBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="45dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assessmentsBox">
+
+                <TextView
+                    android:id="@+id/notesSubheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notes_subHeader"
+                    android:textAppearance="@style/subheading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="7dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/courseNotesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/notesSubheader"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/courseNotesRecyclerView"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="-10dp">
+
+                    <ImageButton
+                        android:id="@+id/addNoteBtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/add_icon_foreground"
+                        android:background="#0000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/addNewAssessmentLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:onClick="addNewNote"
+                        android:contentDescription="@string/addNew_btn_desc"
+                        android:layout_marginStart="-9dp"
+                        android:layout_marginEnd="3dp"/>
+
+                    <TextView
+                        android:id="@+id/addNewNoteLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/addNew"
+                        android:text="@string/add_new_note"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/addAssessmentBtn"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/dialog_and_toast"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

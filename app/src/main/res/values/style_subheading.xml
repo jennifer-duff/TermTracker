@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name = "subheading">
+        <item name = "android:fontFamily">@font/manrope_extrabold</item>
+        <item name = "android:textColor">@color/rose</item>
+        <item name = "android:textSize">17sp</item>
+<!--        <item name = "android:letterSpacing">0.06</item>-->
+<!--        <item name = "android:textAllCaps">true</item>-->
+    </style>
+</resources>
